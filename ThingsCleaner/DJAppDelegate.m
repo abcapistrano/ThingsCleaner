@@ -7,12 +7,49 @@
 //
 
 #import "DJAppDelegate.h"
+#import "Things.h"
+#import "NSDate+MoreDates.h"
+@implementation DJAppDelegate {
 
-@implementation DJAppDelegate
+    ThingsApplication *_thingsApp;
+
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+
+    // delete entries in the log book which are more than a month old
+
+
+    _thingsApp = [SBApplication applicationWithBundleIdentifier:@"com.culturedcode.things"];
+    NSDate *aMonthAgo = [[NSDate date] dateByOffsettingMonths:-1];;
+
+
+
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"completionDate < %@", aMonthAgo];
+
+    ThingsList *logbook = [_thingsApp.lists objectWithName:@"Logbook"];
+    SBElementArray *toDos = logbook.toDos;
+    [toDos filterUsingPredicate:pred];
+
+    [toDos arrayByApplyingSelector:@selector(delete)];
+
+
+    // delete overdue prizes
+
+    ThingsArea *prizesArea = [_thingsApp.areas objectWithName:@"Prizes"];
+    NSPredicate *overDue = [NSPredicate predicateWithFormat:@"status == %@ AND dueDate < %@", [NSAppleEventDescriptor descriptorWithEnumCode:ThingsStatusOpen], [NSDate date] ];
+    SBElementArray *overDuePrizes = prizesArea.toDos;
+    [overDuePrizes filterUsingPredicate:overDue];
+    [overDuePrizes arrayByApplyingSelector:@selector(delete)];
+
+    // clear the trash
+
+    [_thingsApp emptyTrash];
+
+    [NSApp terminate:self];
+
+    
 }
 
 @end
