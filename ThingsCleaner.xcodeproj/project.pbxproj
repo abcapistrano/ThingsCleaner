@@ -7,17 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD8550B417090D1700D4EA79 /* DJCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550B317090D1700D4EA79 /* DJCoreDataController.m */; };
+		FD8550BB1709159300D4EA79 /* DJEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550AD17090CBE00D4EA79 /* DJEntry.m */; };
+		FD8550BC1709159700D4EA79 /* Report+AdditionalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550AB17090CBE00D4EA79 /* Report+AdditionalMethods.m */; };
+		FD8550BD170915A800D4EA79 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550B017090CBE00D4EA79 /* Report.m */; };
+		FD8550C0170916B300D4EA79 /* Model 2.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FD8550BF170916B300D4EA79 /* Model 2.xcdatamodel */; };
+		FD8551C5170923AB00D4EA79 /* libYACYAML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8551BE1709237000D4EA79 /* libYACYAML.a */; };
+		FD8551C8170923C500D4EA79 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8551C7170923C500D4EA79 /* libresolv.dylib */; };
+		FD8551CF1709369200D4EA79 /* MTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551CE1709369200D4EA79 /* MTRandom.m */; };
+		FD8551D4170937DA00D4EA79 /* NSString+GenericString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551D3170937C700D4EA79 /* NSString+GenericString.m */; };
+		FD8551D5170937DB00D4EA79 /* NSDate+MoreDates.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551D1170937C700D4EA79 /* NSDate+MoreDates.m */; };
+		FD8551DA17093C8C00D4EA79 /* DJPrizesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551D917093C8C00D4EA79 /* DJPrizesController.m */; };
+		FD8551DC17094A5800D4EA79 /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = FD8551DB17094A5800D4EA79 /* Icon.iconset */; };
 		FD9E59611708EBDC00A558E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9E59601708EBDC00A558E8 /* Cocoa.framework */; };
 		FD9E596B1708EBDC00A558E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD9E59691708EBDC00A558E8 /* InfoPlist.strings */; };
 		FD9E596D1708EBDC00A558E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9E596C1708EBDC00A558E8 /* main.m */; };
 		FD9E59711708EBDC00A558E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FD9E596F1708EBDC00A558E8 /* Credits.rtf */; };
 		FD9E59741708EBDC00A558E8 /* DJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9E59731708EBDC00A558E8 /* DJAppDelegate.m */; };
-		FD9E59771708EBDC00A558E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9E59751708EBDC00A558E8 /* MainMenu.xib */; };
 		FD9E597F1708EBFB00A558E8 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9E597E1708EBFB00A558E8 /* ScriptingBridge.framework */; };
-		FD9E59831708ED5E00A558E8 /* NSDate+MoreDates.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9E59821708EC7F00A558E8 /* NSDate+MoreDates.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FD8551BD1709237000D4EA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DDC030E156541F8001832F5;
+			remoteInfo = YACYAML;
+		};
+		FD8551BF1709237000D4EA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DDC031E156541F8001832F5;
+			remoteInfo = YACYAMLTests;
+		};
+		FD8551C11709237000D4EA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DE3E3AC15654430006663D2;
+			remoteInfo = libYAML;
+		};
+		FD8551C31709239200D4EA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DDC030D156541F8001832F5;
+			remoteInfo = YACYAML;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		FD8550A817090CBE00D4EA79 /* DJEntry+AdditionalMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DJEntry+AdditionalMethods.h"; sourceTree = "<group>"; };
+		FD8550A917090CBE00D4EA79 /* DJEntry+AdditionalMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DJEntry+AdditionalMethods.m"; sourceTree = "<group>"; };
+		FD8550AA17090CBE00D4EA79 /* Report+AdditionalMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Report+AdditionalMethods.h"; sourceTree = "<group>"; };
+		FD8550AB17090CBE00D4EA79 /* Report+AdditionalMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Report+AdditionalMethods.m"; sourceTree = "<group>"; };
+		FD8550AC17090CBE00D4EA79 /* DJEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJEntry.h; sourceTree = "<group>"; };
+		FD8550AD17090CBE00D4EA79 /* DJEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJEntry.m; sourceTree = "<group>"; };
+		FD8550AF17090CBE00D4EA79 /* Report.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		FD8550B017090CBE00D4EA79 /* Report.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		FD8550B217090D1700D4EA79 /* DJCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJCoreDataController.h; sourceTree = "<group>"; };
+		FD8550B317090D1700D4EA79 /* DJCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJCoreDataController.m; sourceTree = "<group>"; };
+		FD8550BF170916B300D4EA79 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YACYAML.xcodeproj; path = YACYAML/YACYAML.xcodeproj; sourceTree = "<group>"; };
+		FD8551C7170923C500D4EA79 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		FD8551CD1709369100D4EA79 /* MTRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTRandom.h; path = ../../Headers/MTRandom.h; sourceTree = "<group>"; };
+		FD8551CE1709369200D4EA79 /* MTRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTRandom.m; path = ../../Headers/MTRandom.m; sourceTree = "<group>"; };
+		FD8551D0170937C700D4EA79 /* NSDate+MoreDates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+MoreDates.h"; path = "../../Headers/NSDate+MoreDates.h"; sourceTree = "<group>"; };
+		FD8551D1170937C700D4EA79 /* NSDate+MoreDates.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDate+MoreDates.m"; path = "../../Headers/NSDate+MoreDates.m"; sourceTree = "<group>"; };
+		FD8551D2170937C700D4EA79 /* NSString+GenericString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+GenericString.h"; path = "../../Headers/NSString+GenericString.h"; sourceTree = "<group>"; };
+		FD8551D3170937C700D4EA79 /* NSString+GenericString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+GenericString.m"; path = "../../Headers/NSString+GenericString.m"; sourceTree = "<group>"; };
+		FD8551D817093C8B00D4EA79 /* DJPrizesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJPrizesController.h; sourceTree = "<group>"; };
+		FD8551D917093C8C00D4EA79 /* DJPrizesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJPrizesController.m; sourceTree = "<group>"; };
+		FD8551DB17094A5800D4EA79 /* Icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Icon.iconset; sourceTree = "<group>"; };
 		FD9E595D1708EBDC00A558E8 /* ThingsCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9E59601708EBDC00A558E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FD9E59631708EBDC00A558E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -30,11 +93,8 @@
 		FD9E59701708EBDC00A558E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		FD9E59721708EBDC00A558E8 /* DJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJAppDelegate.h; sourceTree = "<group>"; };
 		FD9E59731708EBDC00A558E8 /* DJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJAppDelegate.m; sourceTree = "<group>"; };
-		FD9E59761708EBDC00A558E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FD9E597D1708EBEC00A558E8 /* Things.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Things.h; sourceTree = "<group>"; };
 		FD9E597E1708EBFB00A558E8 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		FD9E59811708EC7F00A558E8 /* NSDate+MoreDates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MoreDates.h"; sourceTree = "<group>"; };
-		FD9E59821708EC7F00A558E8 /* NSDate+MoreDates.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MoreDates.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8551C8170923C500D4EA79 /* libresolv.dylib in Frameworks */,
+				FD8551C5170923AB00D4EA79 /* libYACYAML.a in Frameworks */,
 				FD9E597F1708EBFB00A558E8 /* ScriptingBridge.framework in Frameworks */,
 				FD9E59611708EBDC00A558E8 /* Cocoa.framework in Frameworks */,
 			);
@@ -50,11 +112,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD8550B117090CC500D4EA79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD8550A817090CBE00D4EA79 /* DJEntry+AdditionalMethods.h */,
+				FD8550A917090CBE00D4EA79 /* DJEntry+AdditionalMethods.m */,
+				FD8550AA17090CBE00D4EA79 /* Report+AdditionalMethods.h */,
+				FD8550AB17090CBE00D4EA79 /* Report+AdditionalMethods.m */,
+				FD8550AC17090CBE00D4EA79 /* DJEntry.h */,
+				FD8550AD17090CBE00D4EA79 /* DJEntry.m */,
+				FD8550AF17090CBE00D4EA79 /* Report.h */,
+				FD8550B017090CBE00D4EA79 /* Report.m */,
+				FD8550BF170916B300D4EA79 /* Model 2.xcdatamodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FD8551B81709236F00D4EA79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD8551BE1709237000D4EA79 /* libYACYAML.a */,
+				FD8551C01709237000D4EA79 /* YACYAMLTests.octest */,
+				FD8551C21709237000D4EA79 /* libYAML.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FD9E59541708EBDC00A558E8 = {
 			isa = PBXGroup;
 			children = (
+				FD8551C7170923C500D4EA79 /* libresolv.dylib */,
+				FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */,
 				FD9E597E1708EBFB00A558E8 /* ScriptingBridge.framework */,
 				FD9E597D1708EBEC00A558E8 /* Things.h */,
+				FD8550B117090CC500D4EA79 /* Models */,
 				FD9E59661708EBDC00A558E8 /* ThingsCleaner */,
 				FD9E595F1708EBDC00A558E8 /* Frameworks */,
 				FD9E595E1708EBDC00A558E8 /* Products */,
@@ -91,11 +182,18 @@
 		FD9E59661708EBDC00A558E8 /* ThingsCleaner */ = {
 			isa = PBXGroup;
 			children = (
-				FD9E59811708EC7F00A558E8 /* NSDate+MoreDates.h */,
-				FD9E59821708EC7F00A558E8 /* NSDate+MoreDates.m */,
 				FD9E59721708EBDC00A558E8 /* DJAppDelegate.h */,
 				FD9E59731708EBDC00A558E8 /* DJAppDelegate.m */,
-				FD9E59751708EBDC00A558E8 /* MainMenu.xib */,
+				FD8551D817093C8B00D4EA79 /* DJPrizesController.h */,
+				FD8551D917093C8C00D4EA79 /* DJPrizesController.m */,
+				FD8550B217090D1700D4EA79 /* DJCoreDataController.h */,
+				FD8550B317090D1700D4EA79 /* DJCoreDataController.m */,
+				FD8551CD1709369100D4EA79 /* MTRandom.h */,
+				FD8551CE1709369200D4EA79 /* MTRandom.m */,
+				FD8551D0170937C700D4EA79 /* NSDate+MoreDates.h */,
+				FD8551D1170937C700D4EA79 /* NSDate+MoreDates.m */,
+				FD8551D2170937C700D4EA79 /* NSString+GenericString.h */,
+				FD8551D3170937C700D4EA79 /* NSString+GenericString.m */,
 				FD9E59671708EBDC00A558E8 /* Supporting Files */,
 			);
 			path = ThingsCleaner;
@@ -104,6 +202,7 @@
 		FD9E59671708EBDC00A558E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD8551DB17094A5800D4EA79 /* Icon.iconset */,
 				FD9E59681708EBDC00A558E8 /* ThingsCleaner-Info.plist */,
 				FD9E59691708EBDC00A558E8 /* InfoPlist.strings */,
 				FD9E596C1708EBDC00A558E8 /* main.m */,
@@ -127,6 +226,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FD8551C41709239200D4EA79 /* PBXTargetDependency */,
 			);
 			name = ThingsCleaner;
 			productName = ThingsCleaner;
@@ -153,12 +253,42 @@
 			mainGroup = FD9E59541708EBDC00A558E8;
 			productRefGroup = FD9E595E1708EBDC00A558E8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FD8551B81709236F00D4EA79 /* Products */;
+					ProjectRef = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FD9E595C1708EBDC00A558E8 /* ThingsCleaner */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FD8551BE1709237000D4EA79 /* libYACYAML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYACYAML.a;
+			remoteRef = FD8551BD1709237000D4EA79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD8551C01709237000D4EA79 /* YACYAMLTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = YACYAMLTests.octest;
+			remoteRef = FD8551BF1709237000D4EA79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD8551C21709237000D4EA79 /* libYAML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYAML.a;
+			remoteRef = FD8551C11709237000D4EA79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FD9E595B1708EBDC00A558E8 /* Resources */ = {
@@ -167,7 +297,7 @@
 			files = (
 				FD9E596B1708EBDC00A558E8 /* InfoPlist.strings in Resources */,
 				FD9E59711708EBDC00A558E8 /* Credits.rtf in Resources */,
-				FD9E59771708EBDC00A558E8 /* MainMenu.xib in Resources */,
+				FD8551DC17094A5800D4EA79 /* Icon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,11 +310,27 @@
 			files = (
 				FD9E596D1708EBDC00A558E8 /* main.m in Sources */,
 				FD9E59741708EBDC00A558E8 /* DJAppDelegate.m in Sources */,
-				FD9E59831708ED5E00A558E8 /* NSDate+MoreDates.m in Sources */,
+				FD8550BB1709159300D4EA79 /* DJEntry.m in Sources */,
+				FD8550BC1709159700D4EA79 /* Report+AdditionalMethods.m in Sources */,
+				FD8550BD170915A800D4EA79 /* Report.m in Sources */,
+				FD8550B417090D1700D4EA79 /* DJCoreDataController.m in Sources */,
+				FD8551D5170937DB00D4EA79 /* NSDate+MoreDates.m in Sources */,
+				FD8550C0170916B300D4EA79 /* Model 2.xcdatamodel in Sources */,
+				FD8551D4170937DA00D4EA79 /* NSString+GenericString.m in Sources */,
+				FD8551CF1709369200D4EA79 /* MTRandom.m in Sources */,
+				FD8551DA17093C8C00D4EA79 /* DJPrizesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD8551C41709239200D4EA79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YACYAML;
+			targetProxy = FD8551C31709239200D4EA79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD9E59691708EBDC00A558E8 /* InfoPlist.strings */ = {
@@ -201,14 +347,6 @@
 				FD9E59701708EBDC00A558E8 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		FD9E59751708EBDC00A558E8 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD9E59761708EBDC00A558E8 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -279,7 +417,15 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThingsCleaner/ThingsCleaner-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+				);
 				INFOPLIST_FILE = "ThingsCleaner/ThingsCleaner-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -291,7 +437,15 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThingsCleaner/ThingsCleaner-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+				);
 				INFOPLIST_FILE = "ThingsCleaner/ThingsCleaner-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -316,6 +470,7 @@
 				FD9E597C1708EBDC00A558E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
