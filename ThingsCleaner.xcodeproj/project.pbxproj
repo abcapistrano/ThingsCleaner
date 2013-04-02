@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD5918B9170B049500803AF1 /* YAMLFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5918B8170B049500803AF1 /* YAMLFramework.framework */; };
 		FD8550B417090D1700D4EA79 /* DJCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550B317090D1700D4EA79 /* DJCoreDataController.m */; };
 		FD8550BB1709159300D4EA79 /* DJEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550AD17090CBE00D4EA79 /* DJEntry.m */; };
 		FD8550BC1709159700D4EA79 /* Report+AdditionalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550AB17090CBE00D4EA79 /* Report+AdditionalMethods.m */; };
 		FD8550BD170915A800D4EA79 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8550B017090CBE00D4EA79 /* Report.m */; };
 		FD8550C0170916B300D4EA79 /* Model 2.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FD8550BF170916B300D4EA79 /* Model 2.xcdatamodel */; };
-		FD8551C5170923AB00D4EA79 /* libYACYAML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8551BE1709237000D4EA79 /* libYACYAML.a */; };
-		FD8551C8170923C500D4EA79 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8551C7170923C500D4EA79 /* libresolv.dylib */; };
 		FD8551CF1709369200D4EA79 /* MTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551CE1709369200D4EA79 /* MTRandom.m */; };
 		FD8551D4170937DA00D4EA79 /* NSString+GenericString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551D3170937C700D4EA79 /* NSString+GenericString.m */; };
 		FD8551D5170937DB00D4EA79 /* NSDate+MoreDates.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8551D1170937C700D4EA79 /* NSDate+MoreDates.m */; };
@@ -27,38 +26,8 @@
 		FD9E597F1708EBFB00A558E8 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9E597E1708EBFB00A558E8 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FD8551BD1709237000D4EA79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DDC030E156541F8001832F5;
-			remoteInfo = YACYAML;
-		};
-		FD8551BF1709237000D4EA79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DDC031E156541F8001832F5;
-			remoteInfo = YACYAMLTests;
-		};
-		FD8551C11709237000D4EA79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DE3E3AC15654430006663D2;
-			remoteInfo = libYAML;
-		};
-		FD8551C31709239200D4EA79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7DDC030D156541F8001832F5;
-			remoteInfo = YACYAML;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		FD5918B8170B049500803AF1 /* YAMLFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAMLFramework.framework; path = ../../../../../Library/Frameworks/YAMLFramework.framework; sourceTree = "<group>"; };
 		FD8550A817090CBE00D4EA79 /* DJEntry+AdditionalMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DJEntry+AdditionalMethods.h"; sourceTree = "<group>"; };
 		FD8550A917090CBE00D4EA79 /* DJEntry+AdditionalMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DJEntry+AdditionalMethods.m"; sourceTree = "<group>"; };
 		FD8550AA17090CBE00D4EA79 /* Report+AdditionalMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Report+AdditionalMethods.h"; sourceTree = "<group>"; };
@@ -70,8 +39,6 @@
 		FD8550B217090D1700D4EA79 /* DJCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJCoreDataController.h; sourceTree = "<group>"; };
 		FD8550B317090D1700D4EA79 /* DJCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJCoreDataController.m; sourceTree = "<group>"; };
 		FD8550BF170916B300D4EA79 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
-		FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YACYAML.xcodeproj; path = YACYAML/YACYAML.xcodeproj; sourceTree = "<group>"; };
-		FD8551C7170923C500D4EA79 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		FD8551CD1709369100D4EA79 /* MTRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTRandom.h; path = ../../Headers/MTRandom.h; sourceTree = "<group>"; };
 		FD8551CE1709369200D4EA79 /* MTRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTRandom.m; path = ../../Headers/MTRandom.m; sourceTree = "<group>"; };
 		FD8551D0170937C700D4EA79 /* NSDate+MoreDates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+MoreDates.h"; path = "../../Headers/NSDate+MoreDates.h"; sourceTree = "<group>"; };
@@ -102,8 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8551C8170923C500D4EA79 /* libresolv.dylib in Frameworks */,
-				FD8551C5170923AB00D4EA79 /* libYACYAML.a in Frameworks */,
+				FD5918B9170B049500803AF1 /* YAMLFramework.framework in Frameworks */,
 				FD9E597F1708EBFB00A558E8 /* ScriptingBridge.framework in Frameworks */,
 				FD9E59611708EBDC00A558E8 /* Cocoa.framework in Frameworks */,
 			);
@@ -128,21 +94,10 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FD8551B81709236F00D4EA79 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD8551BE1709237000D4EA79 /* libYACYAML.a */,
-				FD8551C01709237000D4EA79 /* YACYAMLTests.octest */,
-				FD8551C21709237000D4EA79 /* libYAML.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FD9E59541708EBDC00A558E8 = {
 			isa = PBXGroup;
 			children = (
-				FD8551C7170923C500D4EA79 /* libresolv.dylib */,
-				FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */,
+				FD5918B8170B049500803AF1 /* YAMLFramework.framework */,
 				FD9E597E1708EBFB00A558E8 /* ScriptingBridge.framework */,
 				FD9E597D1708EBEC00A558E8 /* Things.h */,
 				FD8550B117090CC500D4EA79 /* Models */,
@@ -226,7 +181,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FD8551C41709239200D4EA79 /* PBXTargetDependency */,
 			);
 			name = ThingsCleaner;
 			productName = ThingsCleaner;
@@ -253,42 +207,12 @@
 			mainGroup = FD9E59541708EBDC00A558E8;
 			productRefGroup = FD9E595E1708EBDC00A558E8 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FD8551B81709236F00D4EA79 /* Products */;
-					ProjectRef = FD8551B71709236F00D4EA79 /* YACYAML.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				FD9E595C1708EBDC00A558E8 /* ThingsCleaner */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FD8551BE1709237000D4EA79 /* libYACYAML.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libYACYAML.a;
-			remoteRef = FD8551BD1709237000D4EA79 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FD8551C01709237000D4EA79 /* YACYAMLTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = YACYAMLTests.octest;
-			remoteRef = FD8551BF1709237000D4EA79 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FD8551C21709237000D4EA79 /* libYAML.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libYAML.a;
-			remoteRef = FD8551C11709237000D4EA79 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FD9E595B1708EBDC00A558E8 /* Resources */ = {
@@ -323,14 +247,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FD8551C41709239200D4EA79 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = YACYAML;
-			targetProxy = FD8551C31709239200D4EA79 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD9E59691708EBDC00A558E8 /* InfoPlist.strings */ = {
@@ -415,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThingsCleaner/ThingsCleaner-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -435,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThingsCleaner/ThingsCleaner-Prefix.pch";
 				HEADER_SEARCH_PATHS = (

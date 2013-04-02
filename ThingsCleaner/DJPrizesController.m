@@ -9,10 +9,10 @@
 #import "DJPrizesController.h"
 #import "Report+AdditionalMethods.h"
 #import "Things.h"
-#import <YACYAML/YACYAML.h>
 #import "NSDate+MoreDates.h"
 #import "MTRandom.h"
 #import "DJCoreDataController.h"
+#import <YAMLFramework/YAMLFramework.h>
 @implementation DJPrizesController
 
 
