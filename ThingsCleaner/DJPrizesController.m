@@ -61,8 +61,8 @@
     
     NSUInteger maxPrizesCount = [self.constants[@"MAX_PRIZES_COUNT"] integerValue];
     
-    if (existingPrizesCount > maxPrizesCount) {
-        return; // don't make prizes if there is more than the count
+    if (existingPrizesCount) {
+        return; // don't make prizes if there are existing prizes. exhaust them first.
     }
 
     NSUInteger prizeCost = [self.constants[@"PRIZES_COST"] integerValue]; //1 prize for every three points
