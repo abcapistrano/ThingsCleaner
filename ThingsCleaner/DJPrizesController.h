@@ -10,7 +10,7 @@
 
 @interface DJPrizesController : NSObject
 @property (readonly, strong, nonatomic) NSDictionary * constants;
-@property (readonly, strong, nonatomic) NSArray *prizes;
+@property (readonly, strong, nonatomic) NSArray *prizesSettings;
 
 @property (readonly, nonatomic) NSUInteger prizesMade;
 + (DJPrizesController *)sharedController;

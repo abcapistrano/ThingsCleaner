@@ -37,9 +37,7 @@
         NSURL* constantsURL = [[DJCoreDataController sharedController].applicationFilesDirectory URLByAppendingPathComponent:@"Constants.yaml"];
         _constants = [YACYAMLKeyedUnarchiver unarchiveObjectWithFile:[constantsURL path]];
 
-        NSURL* prizesURL = [[DJCoreDataController sharedController].applicationFilesDirectory URLByAppendingPathComponent:@"Prizes.yaml"];
-        _prizes = [YACYAMLKeyedUnarchiver unarchiveObjectWithFile:[prizesURL path]];
-
+  
     }
     return self;
 }
@@ -49,80 +47,56 @@
     ThingsApplication* _thingsApp = [SBApplication applicationWithBundleIdentifier:@"com.culturedcode.things"];
 
 
-    Report *report = [DJCoreDataController sharedController].currentReport;
     ThingsArea *prizesArea = [_thingsApp.areas objectWithName:@"Prizes"];
-
 
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"status == %@", [NSAppleEventDescriptor descriptorWithEnumCode:ThingsStatusOpen]];
     NSUInteger existingPrizesCount = [[prizesArea.toDos filteredArrayUsingPredicate:pred] count];
-
-
-
-    
-    NSUInteger maxPrizesCount = [self.constants[@"MAX_PRIZES_COUNT"] integerValue];
-    
+    existingPrizesCount = 0;
     if (existingPrizesCount) {
         return; // don't make prizes if there are existing prizes. exhaust them first.
     }
 
-    NSUInteger prizeCost = [self.constants[@"PRIZES_COST"] integerValue]; //1 prize for every three points
-    NSUInteger numberOfPrizesToMake = MIN(maxPrizesCount - existingPrizesCount, report.totalPoints.integerValue/prizeCost);
+    NSUInteger maxPrizesCount = [self.constants[@"maxPrizesCount"] integerValue];
+    NSUInteger poolSize = [self.constants[@"poolSize"] integerValue];
+    NSUInteger prizesCost = [self.constants[@"prizesCost"] integerValue];
 
 
-
-    NSURL *biasedPrizesURL = [[DJCoreDataController sharedController].applicationFilesDirectory URLByAppendingPathComponent:@"Biased Prizes.yaml"];
-    NSMutableArray *biasedPrizes = [YACYAMLKeyedUnarchiver unarchiveObjectWithFile:[biasedPrizesURL path]];
-
-    NSUInteger count = [biasedPrizes count];
-    if (count == 0 || count < numberOfPrizesToMake ) {
-
-        biasedPrizes = [NSMutableArray array];
-
-        [self.prizes enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(NSDictionary* prize, NSUInteger idx, BOOL *stop) {
-
-            NSString *bias = prize[@"bias"];
-            NSUInteger iteration = 0;
-
-            if ([bias isEqualToString:@"high"]) {
-
-                iteration = [self.constants[@"HIGH_PRIZES_DENSITY"] integerValue];
+    Report *report = [DJCoreDataController sharedController].currentReport;
+    NSUInteger numberOfPrizesToMake = MIN(maxPrizesCount - existingPrizesCount, report.totalPoints.integerValue/prizesCost);
 
 
-            } else if ([bias isEqualToString:@"normal"]) {
+    NSMutableArray *pool = [NSMutableArray arrayWithCapacity:poolSize];
+    NSDictionary *prizes = self.constants[@"prizes"];
+    [prizes enumerateKeysAndObjectsUsingBlock:^(NSString* bias, NSDictionary* prizeInfo, BOOL *stop) {
+        NSArray *activities = prizeInfo[@"activities"];
+        NSUInteger activityCount = [activities count];
+        double percentage = [prizeInfo[@"percentage"] doubleValue] / 100;
 
-                iteration = [self.constants[@"NORMAL_PRIZES_DENSITY"] integerValue];
+
+        NSUInteger countPerActivity = ceil((poolSize * percentage) / activityCount);
+
+        NSLog(@"%f %lu", percentage, countPerActivity);
 
 
-            } else if ([bias isEqualToString:@"low"]) {
+        [activities enumerateObjectsUsingBlock:^(NSDictionary* activityInfo, NSUInteger idx, BOOL *stop) {
 
-                iteration = [self.constants[@"LOW_PRIZES_DENSITY"] integerValue];
+            for (NSUInteger i = 0; i < countPerActivity; i++) {
 
-                
+                [pool addObject:activityInfo];
+
             }
 
-            for (NSUInteger i = 0; i<iteration; i++) {
-                [biasedPrizes addObject:prize];
-            }
-            
-          
-            
+
         }];
 
 
+    }];
 
-       
+    
+    NSArray* sampledPrizes = [pool sample:numberOfPrizesToMake];
 
-
-        
-    }
-
-
-  
     Class todoClass = [_thingsApp classForScriptingClass:@"to do"];
     SBElementArray *toDos = prizesArea.toDos;
-
-
-    NSArray* sampledPrizes = [biasedPrizes grab:numberOfPrizesToMake];
 
     [sampledPrizes enumerateObjectsUsingBlock:^(NSDictionary* prize, NSUInteger idx, BOOL *stop) {
         ThingsToDo *toDo = [todoClass new];
@@ -137,26 +111,18 @@
 
     // add the prize deduction
 
-    if (numberOfPrizesToMake > 0) {
+    ThingsList *logbook = [_thingsApp.lists objectWithName:@"Logbook"];
+    SBElementArray *loggedToDos = logbook.toDos;
 
 
-        ThingsList *logbook = [_thingsApp.lists objectWithName:@"Logbook"];
-        SBElementArray *loggedToDos = logbook.toDos;
-        
-        
-        ThingsToDo *toDo = [todoClass new];
-        [loggedToDos addObject:toDo];
-        
-        NSUInteger pointsUsed = prizeCost * numberOfPrizesToMake;
-        toDo.name = [NSString stringWithFormat:@"Prize. -%lu", pointsUsed];
-        
-        
-    }
+    ThingsToDo *toDo = [todoClass new];
+    [loggedToDos addObject:toDo];
+
+    NSUInteger pointsUsed = prizesCost * numberOfPrizesToMake;
+    toDo.name = [NSString stringWithFormat:@"Prize. -%lu", pointsUsed];
+    
 
     _prizesMade = numberOfPrizesToMake;
-    
-    NSString *yaml = [biasedPrizes YACYAMLEncodedString];
-    [yaml writeToURL:biasedPrizesURL atomically:YES encoding:NSUTF8StringEncoding error:nil];
 
 };
 
