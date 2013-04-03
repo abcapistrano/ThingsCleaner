@@ -45,13 +45,10 @@
 - (void) makePrizes {
 
     ThingsApplication* _thingsApp = [SBApplication applicationWithBundleIdentifier:@"com.culturedcode.things"];
-
-
     ThingsArea *prizesArea = [_thingsApp.areas objectWithName:@"Prizes"];
 
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"status == %@", [NSAppleEventDescriptor descriptorWithEnumCode:ThingsStatusOpen]];
     NSUInteger existingPrizesCount = [[prizesArea.toDos filteredArrayUsingPredicate:pred] count];
-    existingPrizesCount = 0;
     if (existingPrizesCount) {
         return; // don't make prizes if there are existing prizes. exhaust them first.
     }
@@ -74,10 +71,6 @@
 
 
         NSUInteger countPerActivity = ceil((poolSize * percentage) / activityCount);
-
-        NSLog(@"%f %lu", percentage, countPerActivity);
-
-
         [activities enumerateObjectsUsingBlock:^(NSDictionary* activityInfo, NSUInteger idx, BOOL *stop) {
 
             for (NSUInteger i = 0; i < countPerActivity; i++) {
