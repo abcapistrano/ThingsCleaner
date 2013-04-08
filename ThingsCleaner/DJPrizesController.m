@@ -49,9 +49,6 @@
 
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"status == %@", [NSAppleEventDescriptor descriptorWithEnumCode:ThingsStatusOpen]];
     NSUInteger existingPrizesCount = [[prizesArea.toDos filteredArrayUsingPredicate:pred] count];
-    if (existingPrizesCount) {
-        return; // don't make prizes if there are existing prizes. exhaust them first.
-    }
 
     NSUInteger maxPrizesCount = [self.constants[@"maxPrizesCount"] integerValue];
     NSUInteger poolSize = [self.constants[@"poolSize"] integerValue];
@@ -98,7 +95,7 @@
         toDo.name = prize[@"activityName"];
         toDo.tagNames = prize[@"tag"];
 
-        toDo.dueDate = [[[NSDate date] dateByOffsettingDays:30] dateJustBeforeMidnight]; //prizes expire in 30 days.
+        toDo.dueDate = [[[NSDate date] dateByOffsettingDays:[self.constants[@"shelfLife"] integerValue]] dateJustBeforeMidnight];
     }];
 
 
