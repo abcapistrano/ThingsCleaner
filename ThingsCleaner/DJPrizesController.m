@@ -92,7 +92,7 @@
         ThingsToDo *toDo = [todoClass new];
         [toDos addObject:toDo];
 
-        toDo.name = prize[@"activityName"];
+        toDo.name = prize[@"name"];
         toDo.tagNames = prize[@"tag"];
 
         toDo.dueDate = [[[NSDate date] dateByOffsettingDays:[self.constants[@"shelfLife"] integerValue]] dateJustBeforeMidnight];
