@@ -231,6 +231,42 @@ NSString * const LAST_SCAN_DATE_KEY = @"lastScanDate";
     [overDuePrizes filterUsingPredicate:overDue];
     [overDuePrizes arrayByApplyingSelector:@selector(delete)];
 
+    // delete recurring tasks with more than one instance
+
+    NSMutableArray *trashedToDos = [NSMutableArray array];
+
+    ThingsList *today = [_thingsApp.lists objectWithName:@"Today"];
+    NSArray *todayToDos = today.toDos.get;
+
+    NSSortDescriptor *nameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO];
+
+    todayToDos = [todayToDos sortedArrayUsingDescriptors:@[nameDescriptor, dateDescriptor]];
+
+
+    __block ThingsToDo *sentinel;
+    [todayToDos enumerateObjectsUsingBlock:^(ThingsToDo* toDo, NSUInteger idx, BOOL *stop) {
+
+        if (idx > 0) {
+
+            if ([toDo.name isEqualToString:sentinel.name]) {
+
+                [trashedToDos addObject:toDo];
+            }
+
+        }
+
+        sentinel = toDo;
+
+        
+    }];
+
+    [trashedToDos enumerateObjectsUsingBlock:^(ThingsToDo *toDo, NSUInteger idx, BOOL *stop) {
+        [toDo delete];
+    }];
+
+       
+
     // clear the trash
 
     [_thingsApp emptyTrash];
