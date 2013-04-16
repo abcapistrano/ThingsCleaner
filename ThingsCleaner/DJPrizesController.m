@@ -45,6 +45,8 @@
 - (void) makePrizes {
 
     ThingsApplication* _thingsApp = [SBApplication applicationWithBundleIdentifier:@"com.culturedcode.things"];
+    [_thingsApp emptyTrash];
+    
     ThingsArea *prizesArea = [_thingsApp.areas objectWithName:@"Prizes"];
 
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"status == %@", [NSAppleEventDescriptor descriptorWithEnumCode:ThingsStatusOpen]];
@@ -108,11 +110,15 @@
     ThingsToDo *toDo = [todoClass new];
     [loggedToDos addObject:toDo];
 
-    NSUInteger pointsUsed = prizesCost * numberOfPrizesToMake;
-    toDo.name = [NSString stringWithFormat:@"Prize. -%lu", pointsUsed];
-    
+    if (numberOfPrizesToMake) {
+        NSUInteger pointsUsed = prizesCost * numberOfPrizesToMake;
+        toDo.name = [NSString stringWithFormat:@"Prize. -%lu", pointsUsed];
+    }
 
     _prizesMade = numberOfPrizesToMake;
+
+
+
 
 };
 
