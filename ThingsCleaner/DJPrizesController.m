@@ -107,10 +107,12 @@
     SBElementArray *loggedToDos = logbook.toDos;
 
 
-    ThingsToDo *toDo = [todoClass new];
-    [loggedToDos addObject:toDo];
+
 
     if (numberOfPrizesToMake) {
+        ThingsToDo *toDo = [todoClass new];
+        [loggedToDos addObject:toDo];
+        
         NSUInteger pointsUsed = prizesCost * numberOfPrizesToMake;
         toDo.name = [NSString stringWithFormat:@"Prize. -%lu", pointsUsed];
     }
