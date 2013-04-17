@@ -85,7 +85,7 @@
     }];
 
     
-    NSArray* sampledPrizes = [pool sample:numberOfPrizesToMake];
+    NSArray* sampledPrizes = [pool.shuffledArray sample:numberOfPrizesToMake];
 
     Class todoClass = [_thingsApp classForScriptingClass:@"to do"];
     SBElementArray *toDos = prizesArea.toDos;
