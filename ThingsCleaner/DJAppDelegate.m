@@ -42,6 +42,8 @@ NSString * const LAST_SCAN_DATE_KEY = @"lastScanDate";
 
     [self makeReport];
     [[DJPrizesController sharedController] makePrizes];
+
+    [self purgeToDos];
     [self cleanUp];
 
 
@@ -207,6 +209,73 @@ NSString * const LAST_SCAN_DATE_KEY = @"lastScanDate";
 
 
 
+
+- (void) purgeToDos {
+
+    // Move items from the someday list into the Inbox for re-examination which are more than 30 days old
+    
+    NSDate *aMonthAgo = [[NSDate date] dateByOffsettingMonths:-1];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"modificationDate < %@", aMonthAgo];
+    ThingsList *somedayList = [_thingsApp.lists objectWithName:@"Someday"];
+    SBElementArray *toDos = somedayList.toDos;
+    [toDos filterUsingPredicate:pred];
+
+
+    NSMutableArray *movables = [NSMutableArray array];
+    [movables addObjectsFromArray:toDos];
+
+   // [toDos makeObjectsPerformSelector:@selector(moveTo:) withObject:inbox];
+    //[toDos arrayByApplyingSelector:@selector(moveTo:) withObject:inbox];
+
+
+    // Move items from the Next list into the Inbox for reaxmination whose age is a week or more
+    NSDate *aWeekAgo = [[NSDate date] dateByOffsettingDays:-7];
+    //Remove todos from the Today list, and the areas: Prizes and Red Queue
+
+
+    pred = [NSPredicate predicateWithFormat:@"modificationDate < %@", aWeekAgo];
+    ThingsList *next = [_thingsApp.lists objectWithName:@"Next"];
+    toDos = [next.toDos copy];
+    [toDos filterUsingPredicate:pred];
+
+    NSArray *excludedAreas = @[ @"Prizes", @"Red Queue" ];
+
+    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
+    [toDos enumerateObjectsUsingBlock:^(ThingsToDo* toDo, NSUInteger idx, BOOL *stop) {
+
+        NSString *area = toDo.area.name;
+        if (!area) area = toDo.project.area.name;
+
+        if ([excludedAreas containsObject:area]) {
+            [indexSet addIndex:idx];
+        }
+        
+
+    }];
+    [toDos removeObjectsAtIndexes:indexSet];
+    [movables addObjectsFromArray:toDos];
+
+
+
+    ThingsList *inbox = [_thingsApp.lists objectWithName:@"Inbox"];
+
+    [movables enumerateObjectsUsingBlock:^(ThingsToDo* obj, NSUInteger idx, BOOL *stop) {
+        [obj moveTo:inbox];
+    }];
+
+    
+
+
+  
+
+
+
+    
+
+    
+
+
+}
 
 
 
