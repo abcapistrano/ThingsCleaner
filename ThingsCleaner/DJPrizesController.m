@@ -53,38 +53,27 @@
     NSUInteger existingPrizesCount = [[prizesArea.toDos filteredArrayUsingPredicate:pred] count];
 
     NSUInteger maxPrizesCount = [self.constants[@"maxPrizesCount"] integerValue];
-    NSUInteger poolSize = [self.constants[@"poolSize"] integerValue];
     NSUInteger prizesCost = [self.constants[@"prizesCost"] integerValue];
 
 
     Report *report = [DJCoreDataController sharedController].currentReport;
     NSUInteger numberOfPrizesToMake = MIN(maxPrizesCount - existingPrizesCount, report.totalPoints.integerValue/prizesCost);
+    NSMutableArray *pool = [NSMutableArray array];
+    NSArray *prizes = self.constants[@"prizes"];
+    [prizes enumerateObjectsUsingBlock:^(NSDictionary* prizeInfo, NSUInteger idx, BOOL *stop) {
+
+        double power = (idx+1)/1.5;
+        double bias = floor(pow(2,power));
 
 
-    NSMutableArray *pool = [NSMutableArray arrayWithCapacity:poolSize];
-    NSDictionary *prizes = self.constants[@"prizes"];
-    [prizes enumerateKeysAndObjectsUsingBlock:^(NSString* bias, NSDictionary* prizeInfo, BOOL *stop) {
-        NSArray *activities = prizeInfo[@"activities"];
-        NSUInteger activityCount = [activities count];
-        double percentage = [prizeInfo[@"percentage"] doubleValue] / 100;
+        for (NSUInteger i = 0; i < bias; i++) {
+
+            [pool addObject:prizeInfo];
 
 
-        NSUInteger countPerActivity = ceil((poolSize * percentage) / activityCount);
-        [activities enumerateObjectsUsingBlock:^(NSDictionary* activityInfo, NSUInteger idx, BOOL *stop) {
-
-            for (NSUInteger i = 0; i < countPerActivity; i++) {
-
-                [pool addObject:activityInfo];
-
-            }
-
-
-        }];
-
+        }
 
     }];
-
-    
     NSArray* sampledPrizes = [pool.shuffledArray sample:numberOfPrizesToMake];
 
     Class todoClass = [_thingsApp classForScriptingClass:@"to do"];
